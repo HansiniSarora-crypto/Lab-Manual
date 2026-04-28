@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html>
+   <head>
+        <style>
+            body{
+                font-family: 'Times New Roman', Times, serif;
+                text-align: center;
+                font-style: oblique;
+                padding: 40px;   
+                background-image: url(https://i.pinimg.com/736x/d2/30/87/d23087166c7a8b34fd531e4a8fd2248a.jpg);
+                background-repeat: repeat;
+                background-size: cover;
+                background-position: center;
+            }
+            h1{
+                font-size: xx-large;
+                color: purple;
+            }
+            .jar{
+                margin: 20px auto;
+                max-width: 600px;
+                background-color:powderblue ;
+                padding: 20px;
+                border-radius: 10px;
+                box-shadow: 0 0 10px rgba(0 0 0 0.1);
+            }
+            input{
+                padding: 10px;
+                width: 80%;
+                margin-bottom: 20px;
+                border: 1px solid;
+                border-radius: 5px;
+            }
+            button{
+                padding: 10px 15px;
+                margin: 5px;
+                border: none;
+                border-radius: 5px;
+                background-color:lavender;
+                color: darkcyan;
+                cursor: pointer;
+                transition: 0.3s;
+                font-style: italic;
+            }
+            button.hover {
+                background-color: lavenderblush;
+            }
+            #output{
+                margin-top: 20px;
+                padding: 15px;
+                border-radius: 8px;
+                background-color: lightblue ;
+                font-size: large;
+                font-weight: 400;
+                color: darkmagenta;
+                min-height: 40 px;
+            }
+        </style>
+    </head>
+    <body>
+        <h1>Math Man's Logic </h1>
+        <div class="jar">
+            <input type="number" id="numberInput" placeholder="Enter a number">
+            <br>
+            <button onclick="checkEven()">Check Even</button>
+            <button onclick="checkOdd()">Check Odd</button>
+            <button onclick="checkPrime()">Check Prime</button>
+            <button onclick="findFactorial()">Factorial</button>
+            <button onclick="checkArmstrong()">Check Armstrong</button>
+            <div id="output">Result will appear here.....</div>
+        </div>
+        <script>
+            function getNumber() {
+                return parseInt(document.getElementById('numberInput').value);
+            }
+            function checkEven () {
+                let num = getNumber();
+                document.getElementById('output').innerText =
+                   (num % 2 == 0) ?  num  +  " is an Even number" : num  + " is not an Even number";
+            } 
+            function checkOdd () {
+                let num = getNumber();
+                document.getElementById('output').innerText=
+                  (num % 2 !== 0) ?  num  +  " is a Odd number" : num  + " is not a Odd number";
+            }
+            function checkPrime () {
+                let num = getNumber();
+                if (num < 2){
+                  document.getElementById('output').innerText = num   +  " is not a Prime Number ";
+                  return;
+                }
+                for (let i = 2; i <= Math.sqrt(num); i++) {
+                    if (num % i == 0) {
+                        document.getElementById('output').innerText = num  +  " is not a Prime Number";
+                        return;
+                    }
+                }
+                document.getElementById('output').innerText = num  +  " is a Prime Number";
+            }
+            function findFactorial() {
+                let num = getNumber();
+                let fact = 1;
+                for (let i = 1; i <= num; i++) {
+                  fact *= i;
+                }
+                document.getElementById('output').innerText =  "Factorial of " +  num  + " is " + fact;
+            }
+            function checkArmstrong() {
+                let num = getNumber();
+                let sum = 0;
+                let temp = num;
+                let digits = num.toString().length;
+                while (temp > 0) {
+                let digit = temp % 10;
+                    sum += Math.pow(digit, digits);
+                    temp = Math.floor(temp / 10);
+                }
+            document.getElementById('output').innerText = 
+             (sum === num) ? num  +  " is an Armstrong number" : num  +  " is not an Armstrong number";
+             }
+        </script>
+    </body>
+</html>
