@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <style>
+            body{
+                background-image: url(https://i.pinimg.com/736x/98/1a/df/981adf85fac96525d86db9a6bcfb969c.jpg);
+                background-repeat: no-repeat;
+                background-size: cover;
+                background-position: center;
+                text-align: center;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+            }
+            .jar{
+                text-align: center;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                gap:30px;
+                flex-direction: column;
+            }
+            .Ball{
+                width:150px;
+                height:150px;
+                background-color: lightpink;
+                border-radius: 70%;
+                position:relative;
+                margin:100px auto;
+                animation-name: Bouncing;
+                animation-duration: 3s;
+                animation-delay: 1.0257s;
+                animation-timing-function: ease-in;
+                animation-iteration-count: infinite;
+                animation-direction: alternate;
+            }
+            @keyframes Bouncing {
+                from{
+                    top:0px;
+                }
+                to{
+                    top:200px;
+                }
+            }
+        </style>
+    </head>
+    <body>
+        <div class = jar>
+        <h1 style="font-family: 'Times New Roman', Times, serif;font-style: oblique;color:darkmagenta;text-align: center;font-size: xx-large;">
+            A Ball that moves up and down continuously using CSS Animations</h1>
+        <p style="font-size: x-large; text-align: center; font-style: oblique;">This animation shows vertical movement using CSS</p>
+        <div class="Ball"></div>
+        </div>
+    </body>
+</html>
+

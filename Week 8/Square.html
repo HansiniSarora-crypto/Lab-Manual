@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <style>
+            body{
+                background-image: url(https://i.pinimg.com/1200x/50/78/d0/5078d09bd06a422666d5b9254dbd0c87.jpg);
+                background-repeat: no-repeat;
+                background-size: cover;
+                background-position: center;
+                text-align: center;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+            }
+            .jar{
+                 text-align: center;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                gap:30px;
+                flex-direction: column;
+            }
+            .Square {
+            width: 150px;
+            height: 150px;
+            background-color:darkmagenta;
+            margin: 100px auto;
+            animation: Square 2s linear infinite;
+            }
+        @keyframes Square {
+           from {
+            transform: rotate(0deg);
+            }
+           to {
+            transform: rotate(360deg);
+            }
+         }
+        </style>
+    </head>
+    <body>
+        <div class="jar">
+        <h2 style="font-family: 'Times New Roman', Times, serif;font-style: oblique;color: mediumvioletred;text-align: center;font-size: xx-large;">
+            A Square that Continuously rotates 360° using CSS Animation</h2>
+        <p style="font-style: oblique;font-size: x-large;">It demostartes how we can create smooth motion effects on webpages.</p>
+        <div class="Square"></div>
+        </div>
+    </body>
+</html>
