@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Student Grade Calculator</title>
+  <style>
+    body{
+    background-image: url(https://i.pinimg.com/1200x/a2/1c/cc/a21ccc70f4fb46e8ff284d29bfafe32e.jpg);
+    background-repeat: repeat;
+    background-size: cover;
+    text-align: center;
+    display:flex;
+    align-items: center;
+    height:100vh;
+    margin:auto;
+    justify-content: center;
+    }
+  </style>
+</head>
+<body>
+<table border="1" cellpadding="5" cellspacing="0" width="25%">
+  <tr>
+  <td><h2 style="font-size: xx-large;color:darkmagenta; text-align:center;">Student Grade Sheet</h2></td>
+  </tr>
+  <tr>
+    <th><input id="sub1" type="number" placeholder="Subject 1"><br></th>
+  </tr>
+  <tr>
+    <th><input id="sub2" type="number" placeholder="Subject 2"><br></th>
+  </tr>
+   <tr>
+    <th><input id="sub3" type="number" placeholder="Subject 3"><br></th>
+  </tr>
+   <tr>
+    <th><input id="sub4" type="number" placeholder="Subject 4"><br></th>
+  </tr>
+   <tr>
+    <th><input id="sub5" type="number" placeholder="Subject 5"><br></th>
+  </tr>
+   <tr>
+    <th><input id="sub6" type="number" placeholder="Subject 6"><br></th>
+  </tr>
+  <br>
+  <tr>
+  <th><button onclick="calculateGrade()">Compute Grade</button></th>
+  </tr>
+  </table>
+  <p id="result"></p>
+  <script>
+    function calculateGrade() {
+      let m1 = parseInt(document.getElementById("sub1").value);
+      let m2 = parseInt(document.getElementById("sub2").value);
+      let m3 = parseInt(document.getElementById("sub3").value);
+      let m4 = parseInt(document.getElementById("sub4").value);
+      let m5 = parseInt(document.getElementById("sub5").value);
+      let m6 = parseInt(document.getElementById("sub6").value);
+      let average = (m1 + m2 + m3 + m4 + m5 + m6) / 6;
+      let grade;
+      if (average >= 90) {
+        grade = "A";
+      } else if (average >= 80) {
+        grade = "B";
+      } else if (average >= 70) {
+        grade = "C";
+      } else if (average >= 60) {
+        grade = "D";
+      } else {
+        grade = "F";
+      }
+      document.getElementById("result").innerHTML =
+        "Average Marks: " + average + "<br> Grade: " + grade;
+    }
+  </script>
+</body>
+</html>
