@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+    <head>
+         <style>
+            body{
+                background-image:url(https://i.pinimg.com/736x/5f/64/6b/5f646b2286bef6ee95fedd57df5ba2a1.jpg);
+                background-repeat: no-repeat;
+                background-position: center;
+                background-size: cover;
+                height:100%;
+                margin:0;
+                display:flex;
+                align-items: center;
+                height:100vh;
+                margin:auto;
+                justify-content: center;
+            }
+            input {
+                padding: 8px;
+                width: 250px;
+                margin-top: 10px;
+                border: 1px solid #ccc;
+                border-radius: 5px;
+            }
+            #msg {
+                font-size: 14px;
+                margin-top: 10px;
+                font-style: normal;
+            }
+            div{
+                justify-content:center;
+                text-align:center;
+                font-size: x-large;
+                color: mediumvioletred;
+            }
+       </style>
+    </head>
+    <body>
+        <div>
+             UserName : <input type="text" id="name" placeholder="Enter the Username" onkeyup="validate()"><br>
+             <p id="msg"></p>   
+        </div>
+        <script>
+            function validate(){
+                let value=document.getElementById("name").value;
+                if(value.length<5){
+                    document.getElementById("msg").innerHTML="Username must be atleast 5 characters";
+                    document.getElementById("msg").style.color="red";
+                }
+                else{
+                    document.getElementById("msg").innerHTML="Valid Input";
+                    document.getElementById("msg").style.color="green";
+                }
+            }
+        </script>
+    </body>
+</html>

@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Mobile Number Validation</title>
+  <style>
+    .error { color: red; }
+    .success { color: green; }
+    div{
+          justify-content:center;
+          text-align:center;
+          font-size: larger;
+          color:rebeccapurple;
+        }
+       body{
+          background-image:url(https://i.pinimg.com/1200x/57/b9/79/57b97973b2bd56f7745a45cf792fb3f5.jpg);
+          background-repeat: no-repeat;
+          background-position: center;
+          background-size: cover;
+          height:100%;
+          margin:0;
+          display:flex;
+          align-items: center;
+          height:100vh;
+          margin:auto;
+          justify-content: center;
+       }
+  </style>
+</head>
+<body>
+  <div>
+  <form>
+    Mobile Number: 
+    <input type="text" id="mobile" placeholder="Enter 10-digit number" onblur="validateMobile()">
+    <p id="msg"></p>
+  </form>
+  </div>
+  <script>
+    function validateMobile() {
+      let mobile = document.getElementById("mobile").value;
+      let msg = document.getElementById("msg");
+      let pattern = /^[0-9]{10}$/;
+      if (!pattern.test(mobile)) {
+        msg.innerHTML = "Invalid mobile number! Must be exactly 10 digits.";
+        msg.className = "error";
+      } else {
+        msg.innerHTML = "Valid mobile number.";
+        msg.className = "success";
+      }
+    }
+  </script>
+</body>
+</html>

@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Email Validation Form</title>
+  <style>
+    .error { color: red; }
+    .success { color: green; }
+      div{
+          justify-content:center;
+          text-align:center;
+          font-size: x-large;
+          color:deeppink;
+        }
+       body{
+           background-image:url(https://i.pinimg.com/736x/26/48/4a/26484a599b9abb242da4c96601b1863e.jpg);
+          background-repeat: no-repeat;
+          background-position: center;
+          background-size: cover;
+          height:100%;
+          margin:0;
+          display:flex;
+          align-items: center;
+          height:100vh;
+          margin:auto;
+          justify-content: center;
+       }
+  </style>
+</head>
+<body>
+  <div>
+  <form id="regForm" onsubmit="return validateEmail()">
+    Email: <input type="text" id="email" placeholder="Enter your Email">
+    <br><br>
+    <input type="submit" value="Register">
+    <p id="msg"></p>
+  </form>
+  </div>
+  <script>
+    function validateEmail() {
+      let email = document.getElementById("email").value;
+      let msg = document.getElementById("msg");
+      let pattern = /^[^ ]+@[^ ]+\.[a-z]{2,3}$/;
+      if (!pattern.test(email)) {
+        msg.innerHTML = "Invalid email format!";
+        msg.className = "error";
+        return false; 
+      } else {
+        msg.innerHTML = "Valid email!";
+        msg.className = "success";
+        return true; 
+      }
+    }
+  </script>
+</body>
+</html>
